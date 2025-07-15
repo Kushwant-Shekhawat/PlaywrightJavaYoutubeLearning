@@ -19,27 +19,27 @@ public class Lecture02_InteractWithInputs {
         System.out.println(message);
         assertThat(page.locator("#message")).hasText("Hey Tester");
 
-		// type vs fill : Moreover they are same but
+        // type vs fill : Moreover they are same but
         // type : Paste data in Text Field word by word, it will take time
         // fill : Paste the whole data in 1 go, saves time
 
-		page.navigate("https://www.lambdatest.com/selenium-playground/generate-file-to-download-demo");
+        page.navigate("https://www.lambdatest.com/selenium-playground/generate-file-to-download-demo");
 
-		//slow
+        //slow
         page.locator("#textbox").type("The HTML input input is an input element to enter an array of different values. Each input type checkbox has value attribute which is used to define the value submitted by the checkbox.");
         //fast
         page.locator("#textbox").fill("The HTML input input is an input element to enter an array of different values. Each input type checkbox has value attribute which is used to define the value submitted by the checkbox.");
 
         // GET / FETCH input values
 
-         page.navigate("https://letcode.in/edit");
-         String inputValue = page.locator("#getMe").inputValue();
-         System.out.println(inputValue);
-         String placeholderValue = page.locator("#fullName").getAttribute("placeholder");
-         System.out.println(placeholderValue);
-         Locator fullNamelocator = page.locator("#fullName");
-         assertThat(fullNamelocator).hasAttribute("placeholder", "Enter first & last name");
-         page.locator("id=clearMe").clear();
+        page.navigate("https://letcode.in/edit");
+        String inputValue = page.locator("#getMe").inputValue();
+        System.out.println(inputValue);
+        String placeholderValue = page.locator("#fullName").getAttribute("placeholder");
+        System.out.println(placeholderValue);
+        Locator fullNamelocator = page.locator("#fullName");
+        assertThat(fullNamelocator).hasAttribute("placeholder", "Enter first & last name");
+        page.locator("id=clearMe").clear();
 
         //handling the Checkbox
         page.navigate("https://www.lambdatest.com/selenium-playground/checkbox-demo");
